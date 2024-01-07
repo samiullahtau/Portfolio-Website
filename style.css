@@ -28,6 +28,7 @@
   text-transform: uppercase;
   font-size: 1rem;
   color: #fff;
+  position: relative;
 }
 .left-container,
 .right-container {
@@ -41,7 +42,7 @@
   padding-left: 3rem;
 }
 .right-container {
-  background: #3877ff;
+  background: linear-gradient(-45deg, #3877f3, #262525 70%);
   width: 30%;
 }
 .icons .fa-brands {
@@ -82,4 +83,67 @@
   font-size: 1.1rem;
   padding: 0.8rem 1.5rem;
   border-radius: 0.5rem;
+  cursor: pointer;
+}
+button:nth-child(1) {
+  background: #5db9ee;
+  color: #262525;
+}
+button:nth-child(2) {
+  background: transparent;
+  color: #5db9ee;
+  margin-left: 2rem;
+}
+button:nth-child(1):hover {
+  background: transparent;
+  color: #5db9ee;
+}
+button:nth-child(2):hover {
+  background: #5db9ee;
+  color: #262525;
+}
+.icons .fa-brands:hover {
+  cursor: pointer;
+  background: linear-gradient(#fff, #5db9ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.design .circle {
+  aspect-ratio: 1;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+}
+.circle:nth-child(1) {
+  background: linear-gradient(90deg, transparent 50%, #262525 50%);
+  width: 25rem;
+}
+.circle:nth-child(2) {
+  width: 20rem;
+  background-image: url("image/Portfolio.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border: 1rem solid white;
+  box-shadow: 0 0 1rem #fff, inset 0 0 1rem #fff, 0 0 2rem #3877f3,
+    inset 0 0 2rem #3877f3, 0 0 2rem #3877f3, inset 0 0 4rem #3877f3;
+}
+.navlist li a::after,
+.navlist .active::after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  height: 0.1rem;
+  left: 0;
+  bottom: -5px;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.5s;
+}
+.navlist li a:hover::after,
+.navlist .active::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
